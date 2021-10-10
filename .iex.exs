@@ -1,0 +1,1 @@
+alias PickingAndDelivery.Pickings.Core.GetAllStoresWithPickings
