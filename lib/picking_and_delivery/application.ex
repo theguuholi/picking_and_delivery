@@ -9,7 +9,7 @@ defmodule PickingAndDelivery.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      PickingAndDelivery.Repo,
+      # PickingAndDelivery.Repo,
       # Start the Telemetry supervisor
       PickingAndDeliveryWeb.Telemetry,
       # Start the PubSub system
