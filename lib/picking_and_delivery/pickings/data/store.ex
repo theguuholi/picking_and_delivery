@@ -4,7 +4,7 @@ defmodule PickingAndDelivery.Pickings.Data.Store do
 
   def new(store, products) do
     %__MODULE__{
-      name: store["description"],
+      name: store["name"],
       id: store["id"],
       description: store["description"],
       lat: store["lat"],

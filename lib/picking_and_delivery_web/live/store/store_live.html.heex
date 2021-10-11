@@ -1,0 +1,8 @@
+<ul>
+    <%= for store <- @stores do %>
+    <li>
+        <%= store.name %> - <%= store.total_products %>
+        <%= live_component list_products, id: "product-" <> store.id, products: store.products %>
+    </li>
+    <% end %>
+</ul>

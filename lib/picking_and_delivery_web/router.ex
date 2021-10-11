@@ -17,7 +17,7 @@ defmodule PickingAndDeliveryWeb.Router do
   scope "/", PickingAndDeliveryWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", StoreLive, :index
   end
 
   # Other scopes may use custom stacks.
