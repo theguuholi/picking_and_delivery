@@ -1,0 +1,19 @@
+<ul phx-update="append" id="list-stores">
+    <%= for store <- @stores do %>
+    <li id={"store-" <> store.id}>
+        <%= live_patch to: Routes.picking_path(@socket, :index, id: store.id),
+            phx_value_id: store.id,
+            phx_click: "select-store",
+            id: "select-store-#{store.id}"
+         do %>
+            <%= store.name %> - <%= store.description %>
+        <% end  %>
+    </li>
+    <% end %>
+</ul>
+
+
+<div id="pickings-in-the-map" phx-update="append">
+    <div id="map" phx-hook="PickingsMap" data-store-picking-list={Jason.encode!(@stores)}>
+    </div>
+</div>

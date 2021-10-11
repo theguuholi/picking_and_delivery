@@ -13,7 +13,13 @@ defmodule PickingAndDeliveryWeb.Store.ProductsComponent do
         <li id={product.id}>
           <%= product.name %> -
           <strong>Entregue?:</strong> <.delivered status={product.delivered} /> -
-          <button id={"update-product-" <> product.id} phx-target={target} phx-click="deliver" disabled={product.delivered} phx-value-id={product.id}>Entregar</button>
+          <button id={"update-product-" <> product.id} phx-target={target} phx-click="deliver" disabled={product.delivered} phx-value-id={product.id}>
+            <%= if product.delivered do %>
+              Entregue
+            <% else %>
+              Entregar
+            <% end %>
+          </button>
         </li>
     """
   end
