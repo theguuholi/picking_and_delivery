@@ -38,4 +38,26 @@ export default class LocationMap {
 
         return marker;
     }
+
+    highlightMarker(store){
+        console.log("highlightMarker")
+        console.log(store)
+        const marker = this.markerForStore(store);
+        console.log(marker)
+        this.map.panTo(marker.getLatLng());
+    }
+
+    markerForStore(store){
+        let markerLayer;
+        this.map.eachLayer(layer => {
+            if (layer instanceof L.Marker) {
+                const markerPosition = layer.getLatLng();
+                if (markerPosition.lat === store.lat && markerPosition.lng == store.lng) {
+                    console.log(layer)
+                    markerLayer = layer;
+                }
+            }
+        })
+        return markerLayer;
+    }
 }
